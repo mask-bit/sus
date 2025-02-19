@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sus Jornal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Sus Jornal</h1>
+    <a href="/adicionar">Adicionar Notícia</a>
+    <h2>Últimas Notícias</h2>
+    <ul>
+        {% for noticia in noticias %}
+            <li><strong>{{ noticia.titulo }}</strong> - {{ noticia.categoria }}<br>{{ noticia.conteudo }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
